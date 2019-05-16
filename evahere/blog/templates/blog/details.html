@@ -1,0 +1,280 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eva博客</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'font_diy/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static 'css/monokai_sublime.css' %}">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="{% static 'js/highlight.pack.js' %}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+    <style>
+        body{
+            background: #f0f0f0;
+        }
+
+        a:link{
+            color: #46b8da;
+            text-decoration:none;
+
+        } /*指正常的未被访问过的链接*/
+
+        a:visited{
+            text-decoration:none;
+        } /*指已经访问过的链接*/
+
+        a:hover{
+            text-decoration:none;
+
+        } /*指鼠标在链接*/
+
+        a:active{
+            text-decoration:none;
+
+        } /*指正在点的链接*/
+
+        /*a:focus{text-decoration: none}*/
+
+        a.blog-title{
+            color: #3c3c3c;
+        }
+
+        i.iconfont{
+            font-size: 36px;
+        }
+        i.revenge{
+            margin-left: -13px;
+        }
+        i.bk{
+            margin-left: 20px;
+            font-size: 62px;
+        }
+
+        .t1{
+            height: 170px;
+            background: white;
+
+        }
+        .t2{
+            height: 140px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            margin: 20px auto;
+        }
+
+        .title{
+            position: relative;
+            font-size: 35px;
+            top: 7px;
+            left: 20px;
+        }
+
+
+        div.navi{
+
+            {#margin-top: 10px;#}
+            height: 55px;
+            background: white;
+            font-size: 16px;
+        }
+        a.nav-color{
+            color: #444444;
+            {#border: 1px solid #0f0f0f;#}
+        }
+        span.nav-style{
+            color: #0f0f0f;
+            padding-right: 4px;
+        }
+        .search-bar{
+            {#top:5px;#}
+            height: 55px;
+            background: white;
+
+            /*border-left: 1px solid #cccccc;*/
+        }
+
+        .main-body {
+            top: 3px;
+            {#margin-top: -15px;#}
+            background: white;
+        }
+
+        .article-list{
+            top:3px;
+            bottom: 10px;
+            /*height: 1500px;*/
+            background: white;
+            border-right: 1px solid #e0e0e0;
+        }
+        div.article-margin{
+            margin-top: 35px;
+
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .article-header{
+            margin: 25px auto 10px auto;
+            font-size: 27px;
+        }
+        @media screen and (max-width: 768px) {
+            .title-size {
+                font-size: 19px;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1200px) {
+            .title-size {
+                font-size: 19px;
+            }
+        }
+        .title-style{
+            color: #333333;
+            font-weight: bold;
+        }
+        .footer{
+            margin: 17px auto;
+            font-size: 10px;
+            color: #666666;
+        }
+        span.footer-padding{
+            padding-right: 3px;
+        }
+        .article-summary{
+            font-size: 14px;
+            color: #5e5e5e;
+        }
+        hr.h-r{
+            position: relative;
+            left: -30px;
+            /*width: 300px;*/
+            border: 0.5px solid #e0e0e0;
+            margin: 100px auto 30px 50px;
+            width: auto;
+        }
+        .recent-list{
+            margin-left: 10px;
+        }
+        hr.hr-al{
+            margin: 3px auto 11px auto;
+        }
+        a.category-a {
+            color: #222222;
+        }
+
+        div.footer-last{
+            margin: 20px auto;
+        }
+        .footer-style{
+            text-align: center;
+            color: #444444;
+        }
+        i.footer-p{
+            font-size: 16px;
+        }
+        p.footer-p{
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--    博客封面-->
+    <div class="t1 col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+        <div class="t2 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <header class="title">
+                <a href="/" class="blog-title" rel="home">
+                    <i class="iconfont icone"><i class="iconfont iconvip"></i></i>
+                    <i class="iconfont iconfuchouzhelianmeng revenge"></i>
+
+                    <i class="iconfont iconbo bk"><i class="iconfont iconke"></i></i>
+                </a>
+            </header>
+        </div>
+    </div>
+
+    <!--    导航栏-->
+    <div class="navi col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+        <ul class="nav nav-pills">
+            <li class=""><a href="/" class="nav-color"><span class="glyphicon glyphicon-home nav-style"></span>首页</a></li>
+            <li><a href="live.html" class="nav-color"><span class="glyphicon glyphicon-pencil nav-style"></span>生活</a></li>
+            <li><a href="about.html" class="nav-color"><span class="glyphicon glyphicon-leaf nav-style"></span>关于</a></li>
+
+        </ul>
+    </div>
+
+
+    <div class="main-body col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+        <!--    文章更新列表-->
+        <div class="article-list col-lg-9 col-md-9 col-sm-9 col-xs-12">
+            <div class="article-1 article-margin">
+                <article id="blog-1">
+                    <header class="article-header">
+                        <h3 class="title-style title-size">{{ article.title }}</h3>
+                    </header>
+                    <footer class="footer">
+                        <div class="container">
+                            <span class="glyphicon glyphicon-time footer-padding"></span>{{ article.publish_date }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-eye-open footer-padding"></span>{{ article.views }}
+
+                        </div>
+
+                    </footer>
+                    <hr class="title-hr">
+
+                    <div class="article-main">
+{#                        {% for article in article_list %}#}
+                            {% autoescape off %}
+                            <p>{{ article.content }}</p>
+                            {% endautoescape %}
+{#                        {% endfor %}#}
+                    </div>
+                </article>
+            </div>
+
+            <!--    分页链接-->
+            <nav aria-label="...">
+                <div class="trun-page">
+                    <ul class="pager">
+                      <li class="previous"><a href="/details/{{ previous_article.article_id }}">&lt;&lt; &nbsp;上一篇：{{ previous_article.title }}</a></li>
+                      <li class="next"><a href="/details/{{ next_article.article_id }}">下一篇：{{ next_article.title }} &nbsp;&gt;&gt;</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <hr class="h-r">
+        </div>
+
+        <div class="recent col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <h3><span class="glyphicon glyphicon-book">&nbsp;近期文章</span></h3>
+            <hr>
+            {% for article in top7_article_list %}
+                <div class="recent-list">
+                    <h5><a href="/details/{{ article.article_id }}">{{ article.title }}</a></h5>
+                    <hr class="hr-al">
+                </div>
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+
+    <div class="footer-last col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <footer class="footer">
+            <div class="container footer-style">
+                <i class="iconfont iconlvjuren footer-p">&nbsp;Eva博客，keep learning</i>
+                <p class="footer-p">&nbsp;swartz2324@163.com</p>
+            </div>
+        </footer>
+    </div>
+
+
+</body>
+</html>l>
